@@ -28,18 +28,11 @@ soup = BeautifulSoup(html)
 
 results = soup.find('table', {'id': 'tblResults'})
 
-#for obj in results.findAll('tr')[1:]:
-#    recordcell = re.search(r'Total records: (\d+)', )
-#records = recordcell.group().replace('Total records: ','')
-
-#for thing in records:
-#    final = int(thing)
-
 page = results.findAll('td')[67].string.strip()
 lastie = re.search(r'Page 1 of (\d+)', page)
 lastpage = lastie.group().replace('Page 1 of ','')
 
-counter = 0
+counter = 1
 
 def scrape(x):
     for obj in x.findAll('tr')[1:11]:
