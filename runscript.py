@@ -54,8 +54,8 @@ while counter <= int(lastpage):
     soup = BeautifulSoup(html)
     results = soup.find('table', {'id': 'tblResults'})
     scrape(results)
-    browser.find_elements_by_xpath('//*[@id="tblResults"]/tbody/tr[12]/td/font[3]/b/a')[0].click()
     counter += 1
+    browser.find_elements_by_xpath('//*[@id="tblResults"]/tbody/tr[12]/td/font[3]/b/a')[0].click()
     sleep(4)
 
 f.flush()
